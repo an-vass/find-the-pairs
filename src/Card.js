@@ -15,8 +15,10 @@ export default class Card {
     
         parentElement.className = 'card';
         parentElement.dataset.card = '';
-        childElement.textContent = this.content;
-    
+        childElement.style.background = `url(${this.content}) no-repeat center`;
+        childElement.style.width = '100%';
+        childElement.style.height = '100%';
+
         parentElement.appendChild(childElement)
     
         return parentElement;   
