@@ -1,6 +1,6 @@
 export default class Card {
 
-    status; // 'hidded', 'shown', 'failed', 'guessed'
+    status; // 'hidded', 'shown'
 
     constructor(content) {
         this.content = content;
@@ -24,14 +24,8 @@ export default class Card {
         return parentElement;   
     }
 
-    // @TODO: улучшить именование методов
-    success() {
-        this.status = 'success';
-        this.element.classList.add('card--success');
-    }
-
-    isSuccess() {
-        return this.status === 'success';
+    isShown() {
+        return this.status === 'shown';
     }
 
     hide() {
@@ -40,7 +34,7 @@ export default class Card {
     }
 
     show() {
-        this.status = 'visible';
+        this.status = 'shown';
         this.element.classList.remove('card--hidden');
     }
 }

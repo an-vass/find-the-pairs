@@ -2,7 +2,7 @@ import './style.css';
 import Board from "./src/Board.js";
 import { generateCards } from "./src/generate.js";
 
-const pairs = 5;
+const pairs = 3;
 const covers = [
     `assets/images/1.jpg`,
     'assets/images/2.jpg',

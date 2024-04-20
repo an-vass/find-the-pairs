@@ -24,18 +24,17 @@ export default class Board {
     }
 
     processSelectedCards = () => {
-        if (this.selectedCards.length != 2) {
+        if (this.selectedCards.length !== 2) {
             return;
         }
 
         const cardsAreTheSame = this.selectedCards[0].content === this.selectedCards[1].content;
     
         if (cardsAreTheSame) {
-            this.selectedCards.forEach(card => card.success());
-            const notSucessCard = this.cards.find(card => !card.isSuccess());
+            const isGameOver = this.cards.every(card => card.isShown());
     
-            if (!notSucessCard) {
-                alert('you win')
+            if (isGameOver) {
+                alert('you win');
             }
         } else {
             this.selectedCards.forEach(card => card.hide());
@@ -59,10 +58,10 @@ export default class Board {
             return;
         }
 
-        if (card.isSuccess()) {
+        if (card.isShown()) {
             return;
         }
-    
+
         const hasSelectedCard = this.selectedCards.includes(card);
     
         if (hasSelectedCard) {
