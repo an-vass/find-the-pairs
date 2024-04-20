@@ -24,6 +24,10 @@ export default class Card {
         return parentElement;   
     }
 
+    remove() {
+        this.element.remove();
+    }
+
     isShown() {
         return this.status === 'shown';
     }

@@ -31,11 +31,20 @@ export default class Board {
         const cardsAreTheSame = this.selectedCards[0].content === this.selectedCards[1].content;
     
         if (cardsAreTheSame) {
+
+            this.selectedCards.forEach(card => card.remove());
+
+            this.cards = this.cards.filter(card => {
+                return !this.selectedCards.find(selectedCard => card === selectedCard);
+            });
+
+            
             const isGameOver = this.cards.every(card => card.isShown());
     
             if (isGameOver) {
                 alert('you win');
             }
+
         } else {
             this.selectedCards.forEach(card => card.hide());
         }
