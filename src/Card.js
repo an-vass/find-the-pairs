@@ -19,7 +19,7 @@ export default class Card {
         childElement.style.width = '100%';
         childElement.style.height = '100%';
 
-        parentElement.appendChild(childElement)
+        parentElement.appendChild(childElement);
     
         return parentElement;   
     }

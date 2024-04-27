@@ -6,6 +6,7 @@ export default class Board {
         this.element = this.createElement();
         this.appendCardsElements();
         this.createEventListeners();
+        this.showAndHideElements();
     }
 
     createElement() {
@@ -22,6 +23,18 @@ export default class Board {
 
     createEventListeners() {
         this.element.addEventListener('click', this.handleElementClick)
+    }
+
+    showAndHideElements() {
+        this.cards.forEach((card) => {
+            card.show();
+        });
+
+        setTimeout(() => {
+            this.cards.forEach((card) => {
+                card.hide();
+            });
+        }, 3_000);
     }
 
     processSelectedCards = () => {
